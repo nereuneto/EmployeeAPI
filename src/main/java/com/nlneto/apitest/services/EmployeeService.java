@@ -1,6 +1,6 @@
 package com.nlneto.apitest.services;
 
-import com.nlneto.apitest.entities.data.EmployeeDTO;
+import com.nlneto.apitest.model.dto.EmployeeDTO;
 
 import java.util.List;
 import java.util.Optional;

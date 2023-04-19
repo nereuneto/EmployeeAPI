@@ -1,4 +1,4 @@
-package com.nlneto.apitest.entities;
+package com.nlneto.apitest.model.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

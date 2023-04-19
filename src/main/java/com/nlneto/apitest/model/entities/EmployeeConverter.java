@@ -1,6 +1,6 @@
-package com.nlneto.apitest.entities;
+package com.nlneto.apitest.model.entities;
 
-import com.nlneto.apitest.entities.data.EmployeeDTO;
+import com.nlneto.apitest.model.dto.EmployeeDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

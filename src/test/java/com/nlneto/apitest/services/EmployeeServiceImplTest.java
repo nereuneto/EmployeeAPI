@@ -1,8 +1,8 @@
 package com.nlneto.apitest.services;
 
-import com.nlneto.apitest.entities.Employee;
-import com.nlneto.apitest.entities.EmployeeConverter;
-import com.nlneto.apitest.entities.data.EmployeeDTO;
+import com.nlneto.apitest.model.entities.Employee;
+import com.nlneto.apitest.model.entities.EmployeeConverter;
+import com.nlneto.apitest.model.dto.EmployeeDTO;
 import com.nlneto.apitest.repositories.EmployeeRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;

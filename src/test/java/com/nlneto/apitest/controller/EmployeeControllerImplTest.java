@@ -1,7 +1,7 @@
 package com.nlneto.apitest.controller;
 
-import com.nlneto.apitest.entities.data.EmployeeDTO;
-import com.nlneto.apitest.entities.requests.EmployeeRequest;
+import com.nlneto.apitest.model.dto.EmployeeDTO;
+import com.nlneto.apitest.model.requests.EmployeeRequest;
 import com.nlneto.apitest.services.EmployeeService;
 import org.junit.Before;
 import org.junit.Test;

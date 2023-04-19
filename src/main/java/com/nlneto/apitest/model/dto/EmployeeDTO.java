@@ -1,14 +1,17 @@
-package com.nlneto.apitest.entities.requests;
+package com.nlneto.apitest.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Builder
+@Builder(toBuilder = true)
 @Data
 @AllArgsConstructor
-public class EmployeeRequest {
+@NoArgsConstructor
+public class EmployeeDTO {
 
+    private Long id;
     private String nome;
     private String sobrenome;
     private String email;
