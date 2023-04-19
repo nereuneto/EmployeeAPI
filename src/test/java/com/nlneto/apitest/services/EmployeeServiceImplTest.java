@@ -1,9 +1,10 @@
 package com.nlneto.apitest.services;
 
+import com.nlneto.apitest.model.dto.EmployeeDTO;
 import com.nlneto.apitest.model.entities.Employee;
 import com.nlneto.apitest.model.entities.EmployeeConverter;
-import com.nlneto.apitest.model.dto.EmployeeDTO;
 import com.nlneto.apitest.repositories.EmployeeRepository;
+import jakarta.validation.ConstraintViolationException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,4 +90,20 @@ public class EmployeeServiceImplTest {
         EmployeeDTO actualDto = service.update(dto);
         assertEquals(expectedDto, actualDto);
     }
+    @Test
+    public void testCreateEmployeeWithInvalidEmail() {
+        EmployeeDTO dto = new EmployeeDTO(null, "João", "Beto", "João.Beto", 12345678901L);
+        when(repository.save(converter.toEntity(dto))).thenThrow(ConstraintViolationException.class);
+        assertThrows(ConstraintViolationException.class, () -> service.save(dto.getNome(), dto.getSobrenome(),
+                dto.getEmail(), dto.getNis()), "Deveria lançar exceção quando o e-mail é inválido");
+    }
+
+    @Test
+    public void testCreateEmployeeWithoutEmail() {
+        EmployeeDTO dto = new EmployeeDTO(null, "João", "Beto", "", 12345678901L);
+        when(repository.save(converter.toEntity(dto))).thenThrow(ConstraintViolationException.class);
+        assertThrows(ConstraintViolationException.class, () -> service.save(dto.getNome(), dto.getSobrenome(),
+                dto.getEmail(), dto.getNis()), "Deveria lançar exceção quando o e-mail é inválido");
+    }
+
 }
